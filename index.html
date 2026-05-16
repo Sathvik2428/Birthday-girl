@@ -31,8 +31,10 @@ body{
     background:
     linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     display:flex;
     align-items:center;
     justify-content:center;
@@ -78,11 +80,14 @@ body{
 
 .hero{
     height:100vh;
+
     background:
     linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     display:flex;
     align-items:center;
     justify-content:center;
@@ -154,10 +159,6 @@ body{
     font-size:18px;
 }
 
-/* GALLERY */
-
-/* FLOWER GALLERY */
-
 /* CAMERA GALLERY */
 
 .gallery{
@@ -220,17 +221,15 @@ body{
     border-radius:5px;
 }
 
-/* PHOTO POPUP */
+/* PHOTOS */
 
 .photo-popup{
     position:relative;
     width:100%;
-    height:600px;
+    height:650px;
     margin-top:60px;
     display:none;
 }
-
-/* PHOTOS */
 
 .popup-img{
     position:absolute;
@@ -242,11 +241,14 @@ body{
     box-shadow:0 10px 30px rgba(0,0,0,0.5);
 
     opacity:0;
-
     transition:1s;
 }
 
-/* POSITIONS */
+.photo-popup.show .popup-img{
+    opacity:1;
+}
+
+/* PHOTO POSITIONS */
 
 .img1{
     top:20px;
@@ -259,86 +261,32 @@ body{
 }
 
 .img3{
-    top:280px;
+    top:300px;
     left:20%;
 }
 
 .img4{
-    top:280px;
+    top:300px;
     right:20%;
 }
 
 .img5{
-    top:160px;
+    top:170px;
     left:40%;
 }
 
-/* SHOW EFFECT */
-
-.photo-popup.show .popup-img{
-    opacity:1;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.photo-popup{
-    height:1000px;
-}
-
-.popup-img{
-    width:140px;
-    height:190px;
-}
-
-.img1{
-    top:20px;
-    left:5%;
-}
-
-.img2{
-    top:20px;
-    right:5%;
-}
-
-.img3{
-    top:250px;
-    left:10%;
-}
-
-.img4{
-    top:250px;
-    right:10%;
-}
-
-.img5{
-    top:500px;
-    left:28%;
-}
-
-.camera{
-    width:180px;
-    height:120px;
-}
-
-.lens{
-    width:65px;
-    height:65px;
-    left:57px;
-    top:28px;
-}
-
-}
-/* GIFT CARD */
+/* GIFT */
 
 .gift-section{
     padding:100px 20px;
+
     background:
     linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
     url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     text-align:center;
 }
 
@@ -346,13 +294,19 @@ body{
     width:300px;
     height:300px;
     margin:auto;
+
     background:linear-gradient(135deg,#ff4e91,#ff9a8b);
+
     border-radius:30px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     cursor:pointer;
+
     transition:0.5s;
+
     box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
@@ -366,10 +320,9 @@ body{
 
 .gift-inner p{
     font-size:24px;
-    margin-top:10px;
 }
 
-/* LETTER POPUP */
+/* LETTER */
 
 .letter-popup{
     position:fixed;
@@ -377,22 +330,30 @@ body{
     left:0;
     width:100%;
     height:100%;
+
     background:rgba(0,0,0,0.75);
+
     display:none;
     align-items:center;
     justify-content:center;
+
     padding:20px;
+
     z-index:999;
 }
 
 .letter-box{
     background:white;
     color:black;
+
     max-width:700px;
+
     padding:45px;
+
     border-radius:25px;
+
     text-align:center;
-    animation:popup 0.5s ease;
+
     position:relative;
 }
 
@@ -441,23 +402,14 @@ body{
         transform:translateY(0) rotate(0deg);
         opacity:0;
     }
+
     10%{
         opacity:1;
     }
+
     100%{
         transform:translateY(-120vh) rotate(360deg);
         opacity:0;
-    }
-}
-
-@keyframes popup{
-    from{
-        transform:scale(0.5);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
     }
 }
 
@@ -466,6 +418,7 @@ body{
         opacity:0;
         transform:translateY(30px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -498,6 +451,52 @@ footer{
     font-size:40px;
 }
 
+.photo-popup{
+    height:1000px;
+}
+
+.popup-img{
+    width:140px;
+    height:190px;
+}
+
+.img1{
+    top:20px;
+    left:5%;
+}
+
+.img2{
+    top:20px;
+    right:5%;
+}
+
+.img3{
+    top:250px;
+    left:10%;
+}
+
+.img4{
+    top:250px;
+    right:10%;
+}
+
+.img5{
+    top:500px;
+    left:28%;
+}
+
+.camera{
+    width:180px;
+    height:120px;
+}
+
+.lens{
+    width:65px;
+    height:65px;
+    left:57px;
+    top:28px;
+}
+
 }
 
 </style>
@@ -513,11 +512,11 @@ footer{
 
         <h1>Special Surprise For Chaya 💖</h1>
 
-        <p>Scratch below to open your birthday surprise ✨</p>
+        <p>Click below to open your birthday surprise ✨</p>
 
         <div class="scratch-box" onclick="openWebsite()">
-    Click Here 💕
-</div>
+            Click Here 💕
+        </div>
 
     </div>
 
@@ -593,17 +592,7 @@ footer{
 
 </section>
 
-<!-- PHOTO GALLERY -->
-
-<section class="gallery">
-
-    <h2 class="section-title">
-        Beautiful Moments 🌸
-    </h2>
-
-    <!-- FLOWER GALLERY -->
-
-<!-- CAMERA PHOTO SECTION -->
+<!-- CAMERA GALLERY -->
 
 <section class="gallery">
 
@@ -614,8 +603,6 @@ footer{
     <p class="camera-text">
         Click The Camera 📸
     </p>
-
-    <!-- CAMERA -->
 
     <div class="camera-container" onclick="showPhotos()">
 
@@ -628,8 +615,6 @@ footer{
         </div>
 
     </div>
-
-    <!-- PHOTOS -->
 
     <div class="photo-popup" id="photoPopup">
 
@@ -646,9 +631,8 @@ footer{
     </div>
 
 </section>
-</section>
 
-<!-- GIFT SECTION -->
+<!-- GIFT -->
 
 <section class="gift-section">
 
@@ -670,7 +654,7 @@ footer{
 
 </section>
 
-<!-- LETTER POPUP -->
+<!-- LETTER -->
 
 <div class="letter-popup" id="letterPopup">
 
@@ -704,7 +688,7 @@ footer{
 
 <script>
 
-/* SCRATCH CARD */
+/* OPEN WEBSITE */
 
 function openWebsite(){
 
@@ -759,12 +743,25 @@ function closeLetter(){
 
 }
 
-<script>
+/* CAMERA */
 
 function showPhotos(){
 
-    document.getElementById("photoPopup")
-    .classList.toggle("show");
+    const popup = document.getElementById("photoPopup");
+
+    if(popup.style.display === "block"){
+
+        popup.style.display = "none";
+
+    }
+
+    else{
+
+        popup.style.display = "block";
+
+        popup.classList.add("show");
+
+    }
 
 }
 
@@ -772,3 +769,4 @@ function showPhotos(){
 
 </body>
 </html>
+ 
