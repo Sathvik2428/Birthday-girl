@@ -156,31 +156,134 @@ body{
 
 /* GALLERY */
 
+/* FLOWER GALLERY */
+
 .gallery{
-    padding:100px 20px;
-    background:#111;
+    padding:120px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
     text-align:center;
 }
 
-.image-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:40px;
+.flower-gallery{
+    position:relative;
+    width:500px;
+    height:500px;
+    margin:80px auto;
 }
 
-.image-grid img{
-    width:100%;
-    height:320px;
+.center-flower{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:100px;
+    animation:spin 10s linear infinite;
+}
+
+/* PHOTO STYLE */
+
+.petal{
+    position:absolute;
+    width:170px;
+    height:170px;
     object-fit:cover;
-    border-radius:20px;
+    border-radius:50%;
+    border:5px solid white;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
     transition:0.5s;
 }
 
-.image-grid img:hover{
-    transform:scale(1.05);
+.petal:hover{
+    transform:scale(1.12);
 }
 
+/* POSITIONING */
+
+.petal1{
+    top:0;
+    left:160px;
+}
+
+.petal2{
+    top:130px;
+    right:0;
+}
+
+.petal3{
+    bottom:0;
+    right:80px;
+}
+
+.petal4{
+    bottom:0;
+    left:80px;
+}
+
+.petal5{
+    top:130px;
+    left:0;
+}
+
+/* ANIMATION */
+
+@keyframes spin{
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.flower-gallery{
+    width:350px;
+    height:350px;
+}
+
+.petal{
+    width:110px;
+    height:110px;
+}
+
+.center-flower{
+    font-size:70px;
+}
+
+.petal1{
+    top:0;
+    left:120px;
+}
+
+.petal2{
+    top:100px;
+    right:0;
+}
+
+.petal3{
+    bottom:0;
+    right:50px;
+}
+
+.petal4{
+    bottom:0;
+    left:50px;
+}
+
+.petal5{
+    top:100px;
+    left:0;
+}
+
+}
 /* GIFT CARD */
 
 .gift-section{
@@ -452,19 +555,37 @@ footer{
         Beautiful Moments 🌸
     </h2>
 
-    <div class="image-grid">
+    <!-- FLOWER GALLERY -->
 
-    <img src="Chaya1.jpeg">
+<section class="gallery">
 
-    <img src="Chaya2.jpeg">
+    <h2 class="section-title">
+        Beautiful Memories 🌸
+    </h2>
 
-    <img src="Chaya3.jpeg">
+    <div class="flower-gallery">
 
-    <img src="Chaya4.jpeg">
+        <!-- CENTER FLOWER -->
 
-    <img src="Chaya5.jpeg">
+        <div class="center-flower">
+            🌸
+        </div>
 
-</div>
+        <!-- PHOTOS -->
+
+        <img src="Chaya1.jpeg" class="petal petal1">
+
+        <img src="Chaya2.jpeg" class="petal petal2">
+
+        <img src="Chaya3.jpeg" class="petal petal3">
+
+        <img src="Chaya4.jpeg" class="petal petal4">
+
+        <img src="Chaya5.jpeg" class="petal petal5">
+
+    </div>
+
+</section>
 </section>
 
 <!-- GIFT SECTION -->
