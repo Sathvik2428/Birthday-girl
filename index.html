@@ -158,129 +158,175 @@ body{
 
 /* FLOWER GALLERY */
 
+/* CAMERA GALLERY */
+
 .gallery{
     padding:120px 20px;
+    text-align:center;
+
     background:
     linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
-    text-align:center;
 }
 
-.flower-gallery{
+.camera-text{
+    font-size:22px;
+    margin-bottom:40px;
+}
+
+/* CAMERA */
+
+.camera-container{
+    display:flex;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.camera{
+    width:240px;
+    height:160px;
+    background:#222;
+    border-radius:25px;
     position:relative;
-    width:500px;
-    height:500px;
-    margin:80px auto;
-}
-
-.center-flower{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    font-size:100px;
-    animation:spin 10s linear infinite;
-}
-
-/* PHOTO STYLE */
-
-.petal{
-    position:absolute;
-    width:170px;
-    height:170px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid white;
-    box-shadow:0 10px 25px rgba(0,0,0,0.5);
     transition:0.5s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
-.petal:hover{
-    transform:scale(1.12);
+.camera:hover{
+    transform:scale(1.08);
 }
 
-/* POSITIONING */
-
-.petal1{
-    top:0;
-    left:160px;
+.lens{
+    width:90px;
+    height:90px;
+    background:#444;
+    border:10px solid #777;
+    border-radius:50%;
+    position:absolute;
+    top:35px;
+    left:75px;
 }
 
-.petal2{
-    top:130px;
-    right:0;
+.flash{
+    width:40px;
+    height:20px;
+    background:#999;
+    position:absolute;
+    top:20px;
+    right:20px;
+    border-radius:5px;
 }
 
-.petal3{
-    bottom:0;
-    right:80px;
+/* PHOTO POPUP */
+
+.photo-popup{
+    position:relative;
+    width:100%;
+    height:600px;
+    margin-top:60px;
+    display:none;
 }
 
-.petal4{
-    bottom:0;
-    left:80px;
+/* PHOTOS */
+
+.popup-img{
+    position:absolute;
+    width:220px;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid white;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+
+    opacity:0;
+
+    transition:1s;
 }
 
-.petal5{
-    top:130px;
-    left:0;
+/* POSITIONS */
+
+.img1{
+    top:20px;
+    left:10%;
 }
 
-/* ANIMATION */
+.img2{
+    top:80px;
+    right:10%;
+}
 
-@keyframes spin{
-    from{
-        transform:translate(-50%,-50%) rotate(0deg);
-    }
-    to{
-        transform:translate(-50%,-50%) rotate(360deg);
-    }
+.img3{
+    top:280px;
+    left:20%;
+}
+
+.img4{
+    top:280px;
+    right:20%;
+}
+
+.img5{
+    top:160px;
+    left:40%;
+}
+
+/* SHOW EFFECT */
+
+.photo-popup.show .popup-img{
+    opacity:1;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.flower-gallery{
-    width:350px;
-    height:350px;
+.photo-popup{
+    height:1000px;
 }
 
-.petal{
-    width:110px;
-    height:110px;
+.popup-img{
+    width:140px;
+    height:190px;
 }
 
-.center-flower{
-    font-size:70px;
+.img1{
+    top:20px;
+    left:5%;
 }
 
-.petal1{
-    top:0;
-    left:120px;
+.img2{
+    top:20px;
+    right:5%;
 }
 
-.petal2{
-    top:100px;
-    right:0;
+.img3{
+    top:250px;
+    left:10%;
 }
 
-.petal3{
-    bottom:0;
-    right:50px;
+.img4{
+    top:250px;
+    right:10%;
 }
 
-.petal4{
-    bottom:0;
-    left:50px;
+.img5{
+    top:500px;
+    left:28%;
 }
 
-.petal5{
-    top:100px;
-    left:0;
+.camera{
+    width:180px;
+    height:120px;
+}
+
+.lens{
+    width:65px;
+    height:65px;
+    left:57px;
+    top:28px;
 }
 
 }
@@ -557,31 +603,45 @@ footer{
 
     <!-- FLOWER GALLERY -->
 
+<!-- CAMERA PHOTO SECTION -->
+
 <section class="gallery">
 
     <h2 class="section-title">
-        Beautiful Memories 🌸
+        Birthday Girl 💖
     </h2>
 
-    <div class="flower-gallery">
+    <p class="camera-text">
+        Click The Camera 📸
+    </p>
 
-        <!-- CENTER FLOWER -->
+    <!-- CAMERA -->
 
-        <div class="center-flower">
-            🌸
+    <div class="camera-container" onclick="showPhotos()">
+
+        <div class="camera">
+
+            <div class="lens"></div>
+
+            <div class="flash"></div>
+
         </div>
 
-        <!-- PHOTOS -->
+    </div>
 
-        <img src="Chaya1.jpeg" class="petal petal1">
+    <!-- PHOTOS -->
 
-        <img src="Chaya2.jpeg" class="petal petal2">
+    <div class="photo-popup" id="photoPopup">
 
-        <img src="Chaya3.jpeg" class="petal petal3">
+        <img src="Chaya1.jpeg" class="popup-img img1">
 
-        <img src="Chaya4.jpeg" class="petal petal4">
+        <img src="Chaya2.jpeg" class="popup-img img2">
 
-        <img src="Chaya5.jpeg" class="petal petal5">
+        <img src="Chaya3.jpeg" class="popup-img img3">
+
+        <img src="Chaya4.jpeg" class="popup-img img4">
+
+        <img src="Chaya5.jpeg" class="popup-img img5">
 
     </div>
 
