@@ -515,9 +515,9 @@ footer{
 
         <p>Scratch below to open your birthday surprise ✨</p>
 
-        <div class="scratch-box" id="scratchBox">
-            Scratch Here 💕
-        </div>
+        <div class="scratch-box" onclick="openWebsite()">
+    Click Here 💕
+</div>
 
     </div>
 
@@ -706,13 +706,13 @@ footer{
 
 /* SCRATCH CARD */
 
-document.getElementById("scratchBox").addEventListener("click", function(){
+function openWebsite(){
 
     document.getElementById("scratchScreen").style.display = "none";
 
     document.getElementById("mainWebsite").style.display = "block";
 
-});
+}
 
 /* COUNTDOWN */
 
