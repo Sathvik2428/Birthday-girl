@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,8 +28,9 @@ body{
 /* SCRATCH SCREEN */
 
 #scratchScreen{
-    height:100vh;
     width:100%;
+    height:100vh;
+
     background:
     linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
@@ -38,6 +41,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
     padding:20px;
 }
@@ -52,8 +56,8 @@ body{
 
 .scratch-card h1{
     font-size:55px;
-    margin-bottom:15px;
     font-family:'Great Vibes',cursive;
+    margin-bottom:15px;
 }
 
 .scratch-card p{
@@ -64,7 +68,7 @@ body{
     margin-top:35px;
     background:silver;
     color:black;
-    padding:30px;
+    padding:25px;
     border-radius:20px;
     font-size:28px;
     font-weight:bold;
@@ -91,6 +95,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
     padding:20px;
 }
@@ -113,16 +118,17 @@ body{
 .hero p{
     margin-top:20px;
     font-size:20px;
-    max-width:700px;
     line-height:1.8;
+    max-width:700px;
 }
 
 /* COUNTDOWN */
 
 .countdown-section{
     padding:100px 20px;
-    background:linear-gradient(to right,#0f2027,#203a43,#2c5364);
     text-align:center;
+
+    background:linear-gradient(to right,#0f2027,#203a43,#2c5364);
 }
 
 .section-title{
@@ -138,11 +144,11 @@ body{
 }
 
 .time-box{
-    background:rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.1);
     padding:35px;
     border-radius:25px;
     min-width:150px;
-    backdrop-filter:blur(8px);
+
     transition:0.4s;
 }
 
@@ -192,7 +198,9 @@ body{
     background:#222;
     border-radius:25px;
     position:relative;
+
     transition:0.5s;
+
     box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
@@ -203,9 +211,12 @@ body{
 .lens{
     width:90px;
     height:90px;
+
     background:#444;
     border:10px solid #777;
+
     border-radius:50%;
+
     position:absolute;
     top:35px;
     left:75px;
@@ -214,11 +225,14 @@ body{
 .flash{
     width:40px;
     height:20px;
+
     background:#999;
+
+    border-radius:5px;
+
     position:absolute;
     top:20px;
     right:20px;
-    border-radius:5px;
 }
 
 /* PHOTOS */
@@ -228,19 +242,25 @@ body{
     width:100%;
     height:650px;
     margin-top:60px;
+
     display:none;
 }
 
 .popup-img{
     position:absolute;
+
     width:220px;
     height:280px;
+
     object-fit:cover;
+
     border-radius:20px;
     border:5px solid white;
+
     box-shadow:0 10px 30px rgba(0,0,0,0.5);
 
     opacity:0;
+
     transition:1s;
 }
 
@@ -280,19 +300,20 @@ body{
 .gift-section{
     padding:100px 20px;
 
+    text-align:center;
+
     background:
     linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
     url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
-
-    text-align:center;
 }
 
 .gift-card{
     width:300px;
     height:300px;
+
     margin:auto;
 
     background:linear-gradient(135deg,#ff4e91,#ff9a8b);
@@ -322,12 +343,14 @@ body{
     font-size:24px;
 }
 
-/* LETTER */
+/* LETTER POPUP */
 
 .letter-popup{
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
     height:100%;
 
@@ -355,12 +378,16 @@ body{
     text-align:center;
 
     position:relative;
+
+    animation:fadeIn 0.5s ease;
 }
 
 .letter-box h2{
     font-size:50px;
     color:#ff4e91;
+
     margin-bottom:20px;
+
     font-family:'Great Vibes',cursive;
 }
 
@@ -369,35 +396,68 @@ body{
     line-height:1.9;
 }
 
+/* CLOSE BUTTON */
+
 .close-btn{
+
     position:absolute;
     top:15px;
     right:20px;
-    font-size:28px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#ff4e91;
+    color:white;
+
+    font-size:22px;
+
     cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:0.3s;
+}
+
+.close-btn:hover{
+    transform:scale(1.1);
 }
 
 /* HEARTS */
 
 .hearts{
     position:fixed;
+
     width:100%;
     height:100%;
+
     top:0;
     left:0;
+
     overflow:hidden;
+
     pointer-events:none;
 }
 
 .hearts span{
     position:absolute;
+
     bottom:-100px;
+
     color:#ff7aa2;
+
     font-size:20px;
+
     animation:animate 10s linear infinite;
 }
 
 @keyframes animate{
+
     0%{
         transform:translateY(0) rotate(0deg);
         opacity:0;
@@ -411,9 +471,11 @@ body{
         transform:translateY(-120vh) rotate(360deg);
         opacity:0;
     }
+
 }
 
 @keyframes fadeIn{
+
     from{
         opacity:0;
         transform:translateY(30px);
@@ -423,11 +485,12 @@ body{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 footer{
-    padding:20px;
     background:black;
+    padding:20px;
     text-align:center;
 }
 
@@ -500,6 +563,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -512,10 +576,14 @@ footer{
 
         <h1>Special Surprise For Chaya 💖</h1>
 
-        <p>Click below to open your birthday surprise ✨</p>
+        <p>
+            Click below to open your birthday surprise ✨
+        </p>
 
         <div class="scratch-box" onclick="openWebsite()">
+
             Click Here 💕
+
         </div>
 
     </div>
@@ -529,12 +597,14 @@ footer{
 <!-- HEARTS -->
 
 <div class="hearts">
-    <span style="left:10%;animation-delay:0s;">❤</span>
-    <span style="left:25%;animation-delay:2s;">❤</span>
-    <span style="left:40%;animation-delay:4s;">❤</span>
-    <span style="left:55%;animation-delay:1s;">❤</span>
-    <span style="left:70%;animation-delay:5s;">❤</span>
-    <span style="left:85%;animation-delay:3s;">❤</span>
+
+<span style="left:10%;animation-delay:0s;">❤</span>
+<span style="left:25%;animation-delay:2s;">❤</span>
+<span style="left:40%;animation-delay:4s;">❤</span>
+<span style="left:55%;animation-delay:1s;">❤</span>
+<span style="left:70%;animation-delay:5s;">❤</span>
+<span style="left:85%;animation-delay:3s;">❤</span>
+
 </div>
 
 <!-- HERO -->
@@ -632,7 +702,7 @@ footer{
 
 </section>
 
-<!-- GIFT -->
+<!-- GIFT SECTION -->
 
 <section class="gift-section">
 
@@ -660,35 +730,40 @@ footer{
 
     <div class="letter-box">
 
-        <span class="close-btn" onclick="closeLetter()">✖</span>
+        <button class="close-btn" onclick="closeLetter()">
+            ✖
+        </button>
 
         <h2>Dear Chaya 💕</h2>
 
         <p>
 
-Happy Birthday Chaya 💖✨
+Happy Birthday Chaya 💖✨<br><br>
 
-On your special day, I just want to wish you endless happiness, good health, peace and success in everything you do.
+On your special day, I just want to wish you endless happiness, good health, peace and success in everything you do.<br><br>
 
-May your future be as beautiful as the places you dream to visit, and may every journey in your life bring you unforgettable memories, beautiful sunsets and countless smiles 🌍🌸
+May your future be as beautiful as the places you dream to visit, and may every journey in your life bring you unforgettable memories, beautiful sunsets and countless smiles 🌍🌸<br><br>
 
-Keep travelling, keep exploring and keep shining like you always do.  
-May you always stay happy, strong and surrounded by people who truly care about you.
+Keep travelling, keep exploring and keep shining like you always do.
+May you always stay happy, strong and surrounded by people who truly care about you.<br><br>
 
-I hope this year brings you new adventures, amazing opportunities and all the love your heart deserves ✨
+I hope this year brings you new adventures, amazing opportunities and all the love your heart deserves ✨<br><br>
 
-Never stop smiling because your smile makes every moment brighter 💕
+Never stop smiling because your smile makes every moment brighter 💕<br><br>
 
-Once Again,
+Once Again,<br>
 Happy Birthday Chaya 🎂🌿💖
 
-</p>
+        </p>
+
     </div>
 
 </div>
 
 <footer>
-    Made with ❤ specially for Chaya
+
+Made with ❤ specially for Chaya
+
 </footer>
 
 </div>
@@ -717,14 +792,20 @@ setInterval(function(){
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24))
-    / (1000 * 60 * 60));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
 
-    const minutes = Math.floor((distance % (1000 * 60 * 60))
-    / (1000 * 60));
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
 
-    const seconds = Math.floor((distance % (1000 * 60))
-    / 1000);
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
 
     document.getElementById("days").innerHTML = days;
 
@@ -776,4 +857,3 @@ function showPhotos(){
 
 </body>
 </html>
- 
